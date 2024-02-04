@@ -1,0 +1,53 @@
+{
+    "home": {
+        "title1": "Dummytext",
+        "title2": "Dummytext ",
+        "description1": "Dummytext",
+        "description2": "Dummytext",
+        "description3": "Dummytext",
+        "description4": " Dummytext",
+        "buttontext": "Go",
+        "button1": "DEPO",
+        "button2": "DCP",
+        "button3": "DLP",
+        "button4": "DUP"
+    },
+    "depo": {
+        "title": "",
+        "description": ""
+    },
+    "dcp": {
+        "title": "",
+        "description": "",
+        "maxContributionChecker" : {
+            "fields": [
+              {
+                "id": "policyNo",
+                "name": "policyNo",
+                "type": "text",
+                "label": "Policy number"
+              },
+              {
+                "id": "ruleDate",
+                "name": "ruleDate",
+                "type": "date",
+                "label": "Annex date"
+              }
+            ]
+          }
+
+    },
+    "dlp": {
+        "title": "Not yet..",
+        "description": ""
+    },
+    "dup": {
+        "title": "Not yet..",
+        "description": ""
+    },
+    "footer": {
+        "owner": "Dummytext",
+        "description1": "Have a good ",
+        "description2": "!"
+    }
+}
