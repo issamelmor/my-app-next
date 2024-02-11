@@ -114,20 +114,17 @@ export const Table = ({
               </label>
             </div>
             <div className="">
-              {searchable && (
                 <div className="">
-                  {!isLoading && (
                     <DebouncedInput
                       value={globalFilter ?? ""}
                       onChange={(value) => setGlobalFilter(String(value))}
                       placeholder={searchPlaceholder}
                       className="bg-gray-100 rounded dark:bg-gray-300 dark:text-gray-100 tracking-tight text-gray-900 sm:text-1xl sm:leading-10 md:text-1xl md:leading-10 pl-1" // Add this line to set the height to 8 pixels
                     />
-                  )}
+
                 </div>
-              )}
             </div>
-            {!isLoading && table.getPageCount() >= 0 && (
+            {table.getPageCount() >= 0 && (
               <div className="dark:text-gray-300 text-xs text-gray-500 flex gap-4 items-center justify-end py-4">
                 <span className="flex items-center gap-1">
                   <div>Showing</div>

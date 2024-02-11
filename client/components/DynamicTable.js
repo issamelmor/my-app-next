@@ -9,6 +9,7 @@ export const DynamicTable = ({ apiPath, title, id, showTable, setShowTable }) =>
   const [columns, setColumns] = useState([]);
   const [fetchedData, setFetchedData] = useState({});
   const columnHelper = useMemo(() => createColumnHelper(), []);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (showTable[id]) {
@@ -18,6 +19,7 @@ export const DynamicTable = ({ apiPath, title, id, showTable, setShowTable }) =>
         setColumns(fetchedData[id].columns);
       } else {
         // Fetch data if it doesn't exist
+        setIsLoading(true); // Set loading to true before fetching data
         axios.get(apiUrl).then((response) => {
           setData(response.data);
 
@@ -41,6 +43,7 @@ export const DynamicTable = ({ apiPath, title, id, showTable, setShowTable }) =>
             setColumns([columnHelper.accessor("noData", { header: "Message" })]);
             setData([{ noData: "No data found" }]);
           }
+          setIsLoading(false); // Set loading to false after fetching data
         });
       }
     } else {
@@ -59,6 +62,7 @@ export const DynamicTable = ({ apiPath, title, id, showTable, setShowTable }) =>
         showTable={showTable}
         setShowTable={setShowTable}
         id={id}
+        isLoading={isLoading}
       />
     </div>
   );
